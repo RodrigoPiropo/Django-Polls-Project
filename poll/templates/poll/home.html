@@ -1,0 +1,21 @@
+{% extends 'poll/base.html' %}
+
+
+
+{% block content %}
+<body>
+  <br>
+  {% for question in question %}
+    <div class="jumbotron">
+      <h1 class="display-4">{{ question.question_text }}</h1>
+      <p class="card-text"><small class="text-muted">Added on {{ question.date_added }}  </small></p>
+      <a class="btn btn-dark" href="{% url 'vote' question.id %}" role="button">Vote</a>
+    </div>
+  {% empty %}
+    <div class="jumbotron">
+        <h1>Não há enquetes</h1>
+    </div>
+  {% endfor %}
+
+</body>
+{% endblock %}

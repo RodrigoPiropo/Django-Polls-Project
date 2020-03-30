@@ -1,0 +1,17 @@
+{% extends 'poll/base.html' %}
+{% block content %}
+<body>
+<div class="jumbotron">
+  <h1 class="display-4">{{ question.question_text }}</h1>
+  <div class="list-group">
+    <form method="post" action="vote">
+    {% csrf_token %}
+      <p class="list-group-item list-group-item-action">{{ question.option1 }} : {{ question.option1_votes }} </p>
+      <p class="list-group-item list-group-item-action">{{ question.option2 }} : {{ question.option2_votes }} </p>
+      <p class="list-group-item list-group-item-action">{{ question.option3 }} : {{ question.option3_votes }} </p>
+      <h5><strong>TOTAL:</strong> {{ question.total }}</h5>
+    </form>
+  </div>
+</div>
+</body>
+{% endblock %}

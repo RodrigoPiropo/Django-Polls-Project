@@ -1,0 +1,28 @@
+{% extends 'poll/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<form method="post" action="create">
+  <br>
+  <div class="form-group">
+    {% csrf_token %}
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Question:</span>
+      </div>
+      {% render_field form.question_text class="form-control" rows="2" aria-label="Question:"  %}
+    </div>
+    <br>
+      <div class="form-group">
+      {% render_field form.option1 class="form-control" placeholder="1° Option" %}
+      <br>
+      {% render_field form.option2 class="form-control" placeholder="2° Option" %}
+      <br>
+      {% render_field form.option3 class="form-control" placeholder="3° Option" %}
+      </div>
+    <br>
+    <input type="submit" class="btn btn-dark" value="POST">
+  </div>
+</form>
+
+{% endblock %}
