@@ -1,1 +1,3 @@
-# Django Poll Project 
+# Django Polls Project 
+
+## The project is relatively simple, it has the function of creating polls with up to 3 options for anyone to vote ...
